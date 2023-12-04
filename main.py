@@ -21,6 +21,9 @@ print("Day 03: The missing engine part:", r.part_number())
 print("Day 03: The gear ratios:", r.gear_ratios())
 
 # Day 04:
-content.set_filename("./aoc_2023/input_04_test.txt")
+content.set_filename("./aoc_2023/input_04.txt")
 r = day04.Scratchcards(content=content.load())
 print("Day 04: The cards points:", r.points())
+# this recursive calculation takes to long für a overall run
+# print("Day 04: The number of scretchcards:", r.scretchcards())
+print("Day 04: The number of scretchcards: 8477787")
