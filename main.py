@@ -1,4 +1,4 @@
-from aoc_2023 import helpers, day01, day02, day03, day04
+from aoc_2023 import helpers, day01, day02, day03, day04, day05
 
 content = helpers.ContentLoader()
 
@@ -24,6 +24,14 @@ print("Day 03: The gear ratios:", r.gear_ratios())
 content.set_filename("./aoc_2023/input_04.txt")
 r = day04.Scratchcards(content=content.load())
 print("Day 04: The cards points:", r.points())
-# this recursive calculation takes to long für a overall run
+# this recursive calculation takes to long for a overall run
 # print("Day 04: The number of scretchcards:", r.scretchcards())
 print("Day 04: The number of scretchcards: 8477787")
+
+# Day 05:
+content.set_filename("./aoc_2023/input_05.txt")
+r = day05.Seed(content=content.load())
+print("Day 05: The lowest location:", r.lowest_location())
+# this recursive calculation takes to long for a overall run
+# print("Day 05: The lowest location with lots of seeds:", r.lowest_location_with_lots_of_seeds())
+print("Day 05: The lowest location with lots of seeds: 12634632")
