@@ -17,7 +17,6 @@ class Seed():
 
             if line.endswith("map:"):
                 map_name = line.split(" ")[0]
-                self.current_map = map_name
                 self.current_map = {
                     "name": map_name,
                     "translation_rules": []
@@ -52,7 +51,7 @@ class Seed():
     
     def lowest_location_with_lots_of_seeds(self):
         lowest_loc = 9999999999999999
-        lowest_seed_range = 100
+        lowest_seed_range = 0
         lowest_seed_steps = 0
         
         range_number = 0
