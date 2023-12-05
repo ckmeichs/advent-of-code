@@ -32,6 +32,6 @@ print("Day 04: The number of scretchcards: 8477787")
 content.set_filename("./aoc_2023/input_05.txt")
 r = day05.Seed(content=content.load())
 print("Day 05: The lowest location:", r.lowest_location())
-# this recursive calculation takes to long for a overall run
+# this calculation takes to long for a overall run
 # print("Day 05: The lowest location with lots of seeds:", r.lowest_location_with_lots_of_seeds())
 print("Day 05: The lowest location with lots of seeds: 12634632")

@@ -53,7 +53,7 @@ class Seed():
     def lowest_location_with_lots_of_seeds(self):
         lowest_loc = 9999999999999999
         lowest_seed_range = 100
-        lowest_seed_steps = 9999999999999999
+        lowest_seed_steps = 0
         
         range_number = 0
         for i in range(0, len(self.seeds), 2):
