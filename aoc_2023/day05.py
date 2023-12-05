@@ -1,5 +1,3 @@
-import json
-
 class Seed():
     def __init__(self, content) -> None:
         
@@ -10,15 +8,13 @@ class Seed():
         
         for line in content:
             if line.startswith("seeds:"):
-                seeds_string_ist = line.split(" ")
-                for seed_string in seeds_string_ist:
+                for seed_string in line.split(" "):
                     if seed_string.isdigit():
                         self.seeds.append(int(seed_string))
 
             if line.endswith("map:"):
-                map_name = line.split(" ")[0]
                 self.current_map = {
-                    "name": map_name,
+                    "name": line.split(" ")[0],
                     "translation_rules": []
                 }
 
@@ -47,6 +43,7 @@ class Seed():
             loc = self.get_location(seed)
             if loc < lowest_loc:
                 lowest_loc = loc
+                
         return lowest_loc
     
     def lowest_location_with_lots_of_seeds(self):
@@ -67,7 +64,6 @@ class Seed():
             
         # rough approximation in 1000s increments
         for seed_range in self.seeds_ranges:
-            print("check seeds from", seed_range["start_number"], "in range", seed_range["range"])
             steps = 0
             for seed in range(seed_range["start_number"], seed_range["start_number"] + seed_range["range"] - 1, 1000):
                 loc = self.get_location(seed)
