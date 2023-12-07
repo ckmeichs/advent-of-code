@@ -1,4 +1,4 @@
-class Scratchcards():
+class ScratchCards():
     def __init__(self, content) -> None:
         self.content = content
         self.cards = []

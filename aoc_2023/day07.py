@@ -31,7 +31,7 @@ class CamelCards:
             else:
                 proc_hand = self.get_proc_hand(type="standard", hand=hand)
                 value = self.get_hand_value(proc_hand=proc_hand)
-            hand["value"] =value
+            hand["value"] = value
             hand["type"] = self.hand_types[value]
                
         sorted_final = []

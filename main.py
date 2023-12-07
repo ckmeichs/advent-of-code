@@ -28,7 +28,7 @@ if day == 3:
 
 if day == 4:
     content.set_filename("./aoc_2023/input_04.txt")
-    r = day04.Scratchcards(content=content.load())
+    r = day04.ScratchCards(content=content.load())
     print("Day 04: The cards points:", r.points())
     print("Day 04: The number of scretchcards:", r.card_matches())
 
