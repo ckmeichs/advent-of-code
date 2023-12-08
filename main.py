@@ -1,5 +1,5 @@
 import datetime
-from aoc_2023 import helpers, day01, day02, day03, day04, day05, day06, day07
+from aoc_2023 import helpers, day01, day02, day03, day04, day05, day06, day07, day08
 
 content = helpers.ContentLoader()
 
@@ -49,3 +49,9 @@ if day == 7:
     r = day07.CamelCards(content=content.load())
     print("Day 07: The total winnings are:", r.total_winnings(joker=False))
     print("Day 07: The total joker winnings are:", r.total_winnings(joker=True))
+    
+if day == 8:
+    content.set_filename("./aoc_2023/input_08.txt")
+    r = day08.HauntedWasteland(content=content.load())
+    print("Day 08: Required steps:", r.steps())
+    print("Day 08: Required steps v2:", r.steps_v2())

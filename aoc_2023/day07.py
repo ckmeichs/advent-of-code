@@ -17,8 +17,8 @@ class CamelCards:
                 }
             )
         
-        self.cards = ["2", "3", "4" ,"5" ,"6" ,"7" ,"8" ,"9" ,"T" ,"J" ,"Q" ,"K" ,"A"]
-        self.joker_cards = ["J" ,"2", "3", "4" ,"5" ,"6" ,"7" ,"8" ,"9" ,"T" ,"Q" ,"K" ,"A"]
+        self.cards = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
+        self.joker_cards = ["J", "2", "3", "4", "5", "6", "7", "8", "9", "T", "Q", "K", "A"]
         self.hand_types = ["High card", "One pair", "Two pair", "Three of a kind", "Full house", "Four of a kind", "Five of a kind"]
             
     def total_winnings(self, joker=False):
