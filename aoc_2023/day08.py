@@ -23,7 +23,7 @@ class HauntedWasteland():
             instruction = self.instructions_sequence[instruction_index]
             node = list(filter(lambda x: x["name"] == node[instruction], self.nodes))[0]
             s += 1
-            instruction_index +=1
+            instruction_index += 1
             if instruction_index == len(self.instructions_sequence):
                 instruction_index = 0
         return s

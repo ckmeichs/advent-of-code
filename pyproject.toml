@@ -8,6 +8,16 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+numpy = "^1.26.2"
+
+[[tool.poetry.source]]
+name = "iav-pypi"
+url = "https://artifactory.iav.com/artifactory/api/pypi/pypi-remote/simple"
+priority = "primary"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "supplemental"
 
 [build-system]
 requires = ["poetry-core"]

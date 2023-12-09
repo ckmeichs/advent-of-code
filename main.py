@@ -1,5 +1,5 @@
 import datetime
-from aoc_2023 import helpers, day01, day02, day03, day04, day05, day06, day07, day08
+from aoc_2023 import helpers, day01, day02, day03, day04, day05, day06, day07, day08, day09
 
 content = helpers.ContentLoader()
 
@@ -55,3 +55,9 @@ if day == 8:
     r = day08.HauntedWasteland(content=content.load())
     print("Day 08: Required steps:", r.steps())
     print("Day 08: Required steps v2:", r.steps_v2())
+
+if day == 9:
+    content.set_filename("./aoc_2023/input_09.txt")
+    r = day09.MirageMaintenance(content=content.load())
+    print("Day 09: Sum of extrapolated values at the end of each serie:", r.sum_of_extrapolated_values_end())
+    print("Day 09: Sum of extrapolated values: at the beginning of ech serie", r.sum_of_extrapolated_values_beginning())
