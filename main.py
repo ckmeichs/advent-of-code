@@ -1,5 +1,5 @@
 import datetime
-from aoc_2023 import helpers, day01, day02, day03, day04, day05, day06, day07, day08, day09
+from aoc_2023 import helpers, day01, day02, day03, day04, day05, day06, day07, day08, day09, day10, day11
 
 content = helpers.ContentLoader()
 
@@ -61,3 +61,16 @@ if day == 9:
     r = day09.MirageMaintenance(content=content.load())
     print("Day 09: Sum of extrapolated values at the end of each serie:", r.sum_of_extrapolated_values_end())
     print("Day 09: Sum of extrapolated values: at the beginning of ech serie", r.sum_of_extrapolated_values_beginning())
+    
+if day == 10:
+    content.set_filename("./aoc_2023/input_10.txt")
+    r = day10.PipeMaze(content=content.load())
+    print("Day 10: Steps from the starting position to the farthest point:", r.steps())
+    print("Day 10: Tiles are enclosed by the loop:", r.find_enclosed(), "But this is false. :-(")
+    
+if day == 11:
+    content.set_filename("./aoc_2023/input_11_test.txt")
+    r = day11.CosmicExpansion(content=content.load())    
+    print("Day 11: The sum of the lengths:", r.sum_of_lengths())
+    print("Day 11: The sum:", r.sum_of_lengths_2())
+    
