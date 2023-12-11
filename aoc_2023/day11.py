@@ -1,10 +1,8 @@
-import math
-
 class CosmicExpansion():
     def __init__(self, content) -> None:
         self.content = content
         self.load_content()
-        self.expansions_factor = 10
+        self.expansions_factor = 1000000
     
     def load_content(self):
         self.space = []
@@ -29,6 +27,7 @@ class CosmicExpansion():
         sum = 0
         self.load_content()
         self.find_galaxies()
+        self.expand_space_2()
         self.pair_galaxies()
         self.calculate_distances_2()
         for pair in self.galaxy_pairs:
@@ -62,11 +61,9 @@ class CosmicExpansion():
         for y in range(0, len(self.space)):
             for x in range(0, len(self.space[y])):
                 if self.space[y][x] == "#":
-                    self.galaxies.append({"num": n, "y": y, "x": x})
+                    self.galaxies.append({"num": n, "y": y, "ey": 0, "x": x, "ex": 0})
                     n += 1
-        for g in self.galaxies:
-            print(g)
-                    
+                            
     def pair_galaxies(self):
         for i in range(len(self.galaxies)):
             for j in range(i+1, len(self.galaxies)):
@@ -84,19 +81,7 @@ class CosmicExpansion():
 
     def calculate_distances_2(self):
         for pair in self.galaxy_pairs:
-            xdis = 0
-            ydis = 0
-            for x in range(pair["g1"]["x"], pair["g2"]["x"]):
-                if self.space[0][x] == "*":
-                    xdis += 10
-                else:
-                    xdis += 1
-            for y in range(pair["g1"]["y"], pair["g2"]["y"]):
-                if self.space[y][0] == "*":
-                    ydis += 10
-                else:
-                    ydis += 1
-            pair["distance"] = xdis + ydis
+            pair["distance"] = abs(pair["g1"]["ex"] - pair["g2"]["ex"]) + abs(pair["g1"]["ey"] - pair["g2"]["ey"])
                             
     def plot_space(self):
         for y in self.space:
@@ -111,22 +96,19 @@ class CosmicExpansion():
                     galaxy = True
 
             for g in self.galaxies:
-                if not galaxy:
-
-                    g["x"] += 1
-                else:
-                    g["x"] += self.expansions_factor
+                if g["x"] > x:
+                    if not galaxy:
+                        g["ex"] += self.expansions_factor
+                    else:
+                        g["ex"] += 1
             x += 1
                
         y = 0
         while y < len(self.space):
-            if not "#" in self.space[y]:
-                self.space[y] = "*" * x
-            y += 1                                
-            
-
-
-            
-            
-
-            
+            for g in self.galaxies:
+                if g["y"] > y:
+                    if not "#" in self.space[y]:
+                        g["ey"] += self.expansions_factor
+                    else:
+                        g["ey"] += 1
+            y += 1

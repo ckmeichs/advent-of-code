@@ -69,8 +69,8 @@ if day == 10:
     print("Day 10: Tiles are enclosed by the loop:", r.find_enclosed(), "But this is false. :-(")
     
 if day == 11:
-    content.set_filename("./aoc_2023/input_11_test.txt")
+    content.set_filename("./aoc_2023/input_11.txt")
     r = day11.CosmicExpansion(content=content.load())    
     print("Day 11: The sum of the lengths:", r.sum_of_lengths())
-    print("Day 11: The sum:", r.sum_of_lengths_2())
+    print("Day 11: The sum of the lengths in rapid expanded space:", r.sum_of_lengths_2())
     
