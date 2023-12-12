@@ -3,10 +3,12 @@ from aoc_2023 import helpers, day01, day02, day03, day04, day05, day06, day07, d
 
 content = helpers.ContentLoader()
 
-if datetime.datetime.now().date() > datetime.date(2023, 12, 25):
-    day = input("choose a day (1 ... 25): ")
-else:
-    day = datetime.datetime.now().day
+day = 10
+
+#if datetime.datetime.now().date() > datetime.date(2023, 12, 25):
+#    day = input("choose a day (1 ... 25): ")
+#else:
+#    day = datetime.datetime.now().day
 
 if day == 1:
     content.set_filename("./aoc_2023/input_01.txt")
@@ -73,4 +75,7 @@ if day == 11:
     r = day11.CosmicExpansion(content=content.load())    
     print("Day 11: The sum of the lengths:", r.sum_of_lengths())
     print("Day 11: The sum of the lengths in rapid expanded space:", r.sum_of_lengths_2())
+    
+if day == 12:
+    print("Day 12: without me.")
     

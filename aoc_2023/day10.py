@@ -85,40 +85,6 @@ class PipeMaze():
                             self.enclosed.append({"row": r2, "column": c})
                         r2 += 1
                     c += 1
-                
-                    r = step["row"] + 1
-                    c = step["column"] + 1
-                    while self.is_in_range(r, c) and wg[r][c] == ".":
-                        if not self.enclosed_present(row=r, column=c):
-                            self.enclosed.append({"row": r, "column": c})
-                        c2 = c + 1
-                        while self.is_in_range(r, c2) and wg[r][c2] == ".":
-                            if not self.enclosed_present(row=r, column=c2):
-                                self.enclosed.append({"row": r, "column": c2})
-                            c2 += 1
-                        c2 = c - 1
-                        while self.is_in_range(r, c2) and wg[r][c2] == ".":
-                            if not self.enclosed_present(row=r, column=c2):
-                                self.enclosed.append({"row": r, "column": c2})
-                            c2 -= 1
-                        r += 1
-                        
-                    r = step["row"] - 1
-                    c = step["column"] + 1
-                    while self.is_in_range(r, c) and wg[r][c] == ".":
-                        if not self.enclosed_present(row=r, column=c):
-                            self.enclosed.append({"row": r, "column": c})
-                        c2 = c + 1
-                        while self.is_in_range(r, c2) and wg[r][c2] == ".":
-                            if not self.enclosed_present(row=r, column=c2):
-                                self.enclosed.append({"row": r, "column": c2})
-                            c2 += 1
-                        c2 = c - 1
-                        while self.is_in_range(r, c2) and wg[r][c2] == ".":
-                            if not self.enclosed_present(row=r, column=c2):
-                                self.enclosed.append({"row": r, "column": c2})
-                            c2 -= 1
-                        r += 1
                      
             # north ---------------------------------------------------------------------              
             if step["direction"] == "north":
@@ -138,41 +104,7 @@ class PipeMaze():
                             self.enclosed.append({"row": r2, "column": c})
                         r2 += 1
                     c -= 1
-                
-                    r = step["row"] - 1
-                    c = step["column"] - 1
-                    while self.is_in_range(r, c) and wg[r][c] == ".":
-                        if not self.enclosed_present(row=r, column=c):
-                            self.enclosed.append({"row": r, "column": c})
-                        c2 = c + 1
-                        while self.is_in_range(r, c2) and wg[r][c2] == ".":
-                            if not self.enclosed_present(row=r, column=c2):
-                                self.enclosed.append({"row": r, "column": c2})
-                            c2 += 1
-                        c2 = c - 1
-                        while self.is_in_range(r, c2) and wg[r][c2] == ".":
-                            if not self.enclosed_present(row=r, column=c2):
-                                self.enclosed.append({"row": r, "column": c2})
-                            c2 -= 1
-                        r -= 1
-                        
-                    r = step["row"] + 1
-                    c = step["column"] - 1
-                    while self.is_in_range(r, c) and wg[r][c] == ".":
-                        if not self.enclosed_present(row=r, column=c):
-                            self.enclosed.append({"row": r, "column": c})
-                        c2 = c + 1
-                        while self.is_in_range(r, c2) and wg[r][c2] == ".":
-                            if not self.enclosed_present(row=r, column=c2):
-                                self.enclosed.append({"row": r, "column": c2})
-                            c2 += 1
-                        c2 = c - 1
-                        while self.is_in_range(r, c2) and wg[r][c2] == ".":
-                            if not self.enclosed_present(row=r, column=c2):
-                                self.enclosed.append({"row": r, "column": c2})
-                            c2 -= 1
-                        r -= 1
-            
+                            
             # east ---------------------------------------------------------------------    
             if step["direction"] == "east":
                 r = step["row"] - 1
@@ -192,40 +124,6 @@ class PipeMaze():
                         c2 -= 1
                     r -= 1
                     
-                r = step["row"] - 1
-                c = step["column"] - 1
-                while self.is_in_range(r, c) == ".":
-                    if not self.enclosed_present(row=r, column=c):
-                        self.enclosed.append({"row": r, "column": c})
-                    r2 = r - 1
-                    while self.is_in_range(r2, c) and wg[r2][c] == ".":
-                        if not self.enclosed_present(row=r2, column=c):
-                            self.enclosed.append({"row": r2, "column": c})
-                        r2 -= 1
-                    r2 = r + 1
-                    while self.is_in_range(r2, c) and wg[r2][c] == ".":
-                        if not self.enclosed_present(row=r2, column=c):
-                            self.enclosed.append({"row": r2, "column": c})
-                        r2 += 1
-                    c -= 1
-                    
-                r = step["row"] - 1
-                c = step["column"] + 1
-                while self.is_in_range(r, c) == ".":
-                    if not self.enclosed_present(row=r, column=c):
-                        self.enclosed.append({"row": r, "column": c})
-                    r2 = r - 1
-                    while self.is_in_range(r2, c) and wg[r2][c] == ".":
-                        if not self.enclosed_present(row=r2, column=c):
-                            self.enclosed.append({"row": r2, "column": c})
-                        r2 -= 1
-                    r2 = r + 1
-                    while self.is_in_range(r2, c) and wg[r2][c] == ".":
-                        if not self.enclosed_present(row=r2, column=c):
-                            self.enclosed.append({"row": r2, "column": c})
-                        r2 += 1
-                    c -= 1
-                    
             # west ---------------------------------------------------------------------      
             if step["direction"] == "west":
                 r = step["row"] + 1
@@ -244,24 +142,7 @@ class PipeMaze():
                             self.enclosed.append({"row": r, "column": c2})
                         c2 -= 1
                     r += 1
-                    
-                r = step["row"] + 1
-                c = step["column"] + 1
-                while self.is_in_range(r, c) and wg[r][c] == ".":
-                    if not self.enclosed_present(row=r, column=c):
-                        self.enclosed.append({"row": r, "column": c})
-                    r2 = r - 1
-                    while self.is_in_range(r2, c) and wg[r2][c] == ".":
-                        if not self.enclosed_present(row=r2, column=c):
-                            self.enclosed.append({"row": r2, "column": c})
-                        r2 -= 1
-                    r2 = r + 1
-                    while self.is_in_range(r2, c) and wg[r2][c] == ".":
-                        if not self.enclosed_present(row=r2, column=c):
-                            self.enclosed.append({"row": r2, "column": c})
-                        r2 += 1
-                    c += 1
-                    
+                              
         self.print_nest()
         return len(self.enclosed)
             
