@@ -46,11 +46,11 @@ class PointOfIncidence():
     def is_mirror(self, area, j):
         if area[j] == area[j + 1]:
             m = 1
-            is_mirror = True
+            ism = True
             while (j - m >= 0) and (j + m + 1 < len(area)):
                 if area[j - m] != area[j + m + 1]:
-                    is_mirror = False
+                    ism = False
                 m += 1
-            if is_mirror:
+            if ism:
                 return True
         return False
