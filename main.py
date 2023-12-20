@@ -84,4 +84,5 @@ if day == 13:
     content.set_filename("./aoc_2023/input_13.txt")
     r= day13.PointOfIncidence(content=content.load())
     print("Day 13: The summarizing all of all notes:", r.summared_notes())
+    print("Day 13: The summarizing all of all notes with corrected blind fields:", r.summared_corrected_notes())
     
