@@ -19,7 +19,3 @@ class ChiefHistorian:
             multi = self.sl2.count(i)
             result += (i * multi)
         print(result)
-
-
-    
-
