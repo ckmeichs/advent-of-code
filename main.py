@@ -1,8 +1,8 @@
-from aoc_2024 import helpers, day01, day02, day03, day04
+from aoc_2024 import helpers, day01, day02, day03, day04, day05
 
 content = helpers.ContentLoader()
 
-day = 4
+day = 5
 
 if day == 1:
     content.set_filename("./aoc_2024/input_01.txt")
@@ -24,5 +24,11 @@ if day == 3:
 if day == 4:
     content.set_filename("./aoc_2024/input_04.txt")
     r = day04.CeresSearch(content=content.load())
+    r.part_one()
+    r.part_two()
+
+if day == 5:
+    content.set_filename("./aoc_2024/input_05.txt")
+    r = day05.PrintQueue(content=content.load_as_text())
     r.part_one()
     r.part_two()

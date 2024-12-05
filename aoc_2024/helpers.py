@@ -16,5 +16,14 @@ class ContentLoader():
             print("please set a valid filename.")
             return None
     
+    def load_as_text(self):
+        if self.filename != "":
+            with open(self.filename, 'r', encoding='utf-8') as file:
+                content = file.read()        
+            return content
+        else:
+            print("please set a valid filename.")
+            return None
+    
     def set_filename(self, filename):
         self.filename = filename
