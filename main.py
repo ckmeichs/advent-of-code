@@ -1,8 +1,8 @@
-from aoc_2024 import helpers, day01, day02, day03, day04, day05, day06, day07
+from aoc_2024 import helpers, day01, day02, day03, day04, day05, day06, day07, day13, day14, day15
 
 content = helpers.ContentLoader()
 
-day = 6
+day = 15
 
 if day == 1:
     content.set_filename("./aoc_2024/input_01.txt")
@@ -39,8 +39,25 @@ if day == 6:
     r.part_one()
     r.part_two()
 
+
 if day == 7:
     content.set_filename("./aoc_2024/input_07.txt")
     r = day07.BridgeRepair(content=content.load())
     r.part_one()
     r.part_two()
+
+if day == 13:
+    content.set_filename("./aoc_2024/input_13.txt")
+    r = day13.ClawContraption(content=content.load())
+    r.part_one()
+    r.part_two()
+
+if day == 14:
+    content.set_filename("./aoc_2024/input_14.txt")
+    r = day14.RestroomRedoubt(content=content.load())
+    r.part_one_and_two()
+
+if day == 15:
+    content.set_filename("./aoc_2024/input_15.txt")
+    r = day15.WarehouseWoes(content=content.load())
+    r.part_one()
