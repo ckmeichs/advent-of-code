@@ -1,8 +1,8 @@
-from aoc_2024 import helpers, day01, day02, day03, day04, day05, day06, day07, day13, day14, day15
+from aoc_2024 import helpers, day01, day02, day03, day04, day05, day06, day07, day13, day14, day15, day16, day18
 
 content = helpers.ContentLoader()
 
-day = 15
+day = 18
 
 if day == 1:
     content.set_filename("./aoc_2024/input_01.txt")
@@ -61,3 +61,14 @@ if day == 15:
     content.set_filename("./aoc_2024/input_15.txt")
     r = day15.WarehouseWoes(content=content.load())
     r.part_one()
+
+if day == 16:
+    content.set_filename("./aoc_2024/input_16_test.txt")
+    r = day16.ReindeerMaze(content=content.load())
+    r.part_one()
+
+if day == 18:
+    content.set_filename("./aoc_2024/input_18.txt")
+    r = day18.RAMRun(content=content.load())
+    r.part_one()
+    r.part_two()
