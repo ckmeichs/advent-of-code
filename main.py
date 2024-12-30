@@ -1,8 +1,8 @@
-from aoc_2024 import helpers, day01, day02, day03, day04, day05, day06, day07, day13, day14, day15, day16, day18
+from aoc_2024 import helpers, day01, day02, day03, day04, day05, day06, day07, day13, day14, day15, day16, day18, day19, day24, day25
 
 content = helpers.ContentLoader()
 
-day = 18
+day = 25
 
 if day == 1:
     content.set_filename("./aoc_2024/input_01.txt")
@@ -72,3 +72,18 @@ if day == 18:
     r = day18.RAMRun(content=content.load())
     r.part_one()
     r.part_two()
+
+if day == 19:
+    content.set_filename("./aoc_2024/input_19.txt")
+    r = day19.LinenLayout(content=content.load())
+    r.part_one()
+
+if day == 24:
+    content.set_filename("./aoc_2024/input_24.txt")
+    r = day24.CrossedWires(content=content.load())
+    r.part_one()
+
+if day == 25:
+    content.set_filename("./aoc_2024/input_25.txt")
+    r = day25.CodeChronicle(content=content.load())
+    r.part_one()
